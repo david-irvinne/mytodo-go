@@ -1,0 +1,16 @@
+GET http://localhost:5000/api/todos
+
+
+### 
+POST http://localhost:5000/api/todos
+Content-Type: application/json
+
+{
+  "body" : "gawr goober 3"
+}
+
+### 
+PATCH http://localhost:5000/api/todos/2
+
+### 
+DELETE http://localhost:5000/api/todos/1

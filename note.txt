@@ -1,0 +1,14 @@
+# start project
+go mod init github.com/david-irvinne/mytodo
+
+# install gofiber
+go get github.com/gofiber/fiber/v2
+
+# air, nodemon like tool
+go install github.com/air-verse/air@latest
+then, create "air.toml":w
+ 
+
+# install dotenv
+go get github.com/joho/godotenv
+then, create PORT, MONGO_URI
