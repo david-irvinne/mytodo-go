@@ -12,3 +12,7 @@ then, create "air.toml":w
 # install dotenv
 go get github.com/joho/godotenv
 then, create PORT, MONGO_URI
+
+
+# install mongodb 
+go get go.mongodb.org/mongo-driver/mongo
