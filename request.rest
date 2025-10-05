@@ -6,11 +6,12 @@ POST http://localhost:5000/api/todos
 Content-Type: application/json
 
 {
-  "body" : "gawr goober 1212"
+  "body" : "gawr goob12"
 }
 
 ### 
-PATCH http://localhost:5000/api/todos/2
+PATCH http://localhost:5000/api/todos/68c99a1a80e9dfefa10c1501
+
 
 ### 
-DELETE http://localhost:5000/api/todos/1
+DELETE http://localhost:5000/api/todos/68c99a1a80e9dfefa10c1501

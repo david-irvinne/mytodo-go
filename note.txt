@@ -13,6 +13,21 @@ then, create "air.toml":w
 go get github.com/joho/godotenv
 then, create PORT, MONGO_URI
 
-
 # install mongodb 
 go get go.mongodb.org/mongo-driver/mongo
+
+# install cors
+go get github.com/gofiber/cors
+
+# ALL under client folder here
+# make frontend 
+mkdir client
+cd client
+npm create vite@latest . 
+
+# get chakra ui
+npm i @chakra-ui/react@2 @emotion/react @emotion/styled framer-motion
+npm i react-icons
+
+# install tanstack for api consuming
+npm i @tanstack/react-query

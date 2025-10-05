@@ -12,6 +12,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+	// "github.com/gofiber/cors"
 )
 
 type Todo struct { // json: digunakan untuk serialisasi dan deserialisasi
@@ -54,6 +55,10 @@ func main(){
 	collection = client.Database("golang_db").Collection("todos");
 
 	app := fiber.New();
+	// app.Use(cors.New(cors.Config{
+	// 	AllowOrigins: []string{"http://localhost:5173"},
+	// 	AllowHeaders: []string{"Origin", "Content-Type", "Accept"},
+	// }))
 	app.Get("/api/todos", getTodos);
 	app.Post("/api/todos", createTodo);
 	app.Patch("/api/todos/:id", updateTodo);
@@ -121,7 +126,7 @@ func updateTodo(c *fiber.Ctx) error {
 	update := bson.M{"$set": bson.M{"completed": true}}; 
 	_, err = collection.UpdateOne(context.Background(), filter, update);
 	if err != nil { 
-		return nil;
+		return err;
 	}
 	return c.Status(200).JSON(fiber.Map{"success": true});
 }
